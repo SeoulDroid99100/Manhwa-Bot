@@ -13,3 +13,4 @@ PyPDF2
 psutil
 flask
 gunicorn
+nest_asyncio
