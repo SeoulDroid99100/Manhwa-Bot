@@ -7,6 +7,8 @@ import random, os, shutil, asyncio
 
 from pyrogram import utils as pyroutils
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+import nest_asyncio
+nest_asyncio.apply()
 
 class Vars:
   API_ID = int(os.environ.get("API_ID", ""))
@@ -23,7 +25,7 @@ class Vars:
   DB_URL = os.environ.get("DB_URL", "")
   
   PORT = int(os.environ.get("PORT", "8080"))
-  ADMINS = [1880221341]
+  ADMINS = [6783092268]
   
   IS_PRIVATE = os.environ.get("IS_PRIVATE", None) #True Or None  Bot is for admins only
   CONSTANT_DUMP_CHANNEL = os.environ.get("CONSTANT_DUMP_CHANNEL", None)
@@ -133,7 +135,7 @@ class Manhwa_Bot(pyrogram.Client, Vars):
       api_hash=self.API_HASH,
       bot_token=self.BOT_TOKEN,
       plugins=self.plugins,
-      workers=50,
+      workers=500,
     )
     self.logger = logger
     self.__version__ = pyrogram.__version__
